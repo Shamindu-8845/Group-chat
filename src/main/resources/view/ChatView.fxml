@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupchat.controller.ChatController">
+    <left>
+        <VBox prefHeight="340.0" prefWidth="150">
+            <Label text="Client Application">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font></Label>
+        </VBox>
+    </left>
+    <center>
+        <VBox>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="270.0" prefWidth="538.0" vvalue="1.0">
+                <VBox fx:id="chatContainer" />
+            </ScrollPane>
+            <HBox>
+                <TextArea fx:id="messageArea" onKeyPressed="#handleKeyPress" prefRowCount="3" prefWidth="478.0" wrapText="true" />
+                <VBox spacing="5">
+                    <Button fx:id="sendButton" onAction="#handleSendMessage" prefHeight="33.0" prefWidth="60" text="Send" />
+                </VBox>
+            </HBox>
+            <FlowPane fx:id="emojiPane" hgap="5" prefWrapLength="200" vgap="5" visible="false" />
+        </VBox>
+    </center>
+</BorderPane>
